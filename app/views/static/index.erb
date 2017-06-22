@@ -1,2 +1,39 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div class="container">
+  <h1 class="text-center">
+    Simp.ly
+  </h1>
+  <h2 class="text-center">
+   URL made simple
+  </h2><br>
+    
+  <p class="text-center">Please insert your URL (complete with 'http|https://') </p>
+  <form action="/add_url" method="post">
+    <input type="text" class="form-control" name="long_url">
+  </form>
+
+  <div class="col-md4 text-center">
+    <button type="submit" class="btn btn-success btn btn-primary btn-lg">Simp.ly</button>
+  </div><br>
+
+  <table class="table table-hover table table-striped">
+    <tr>
+  <!--     <th>Id</th> -->
+      <th>Long URL</th>
+      <th>Short URL</th>
+      <th>Clicks</th>
+    </tr>
+    <tr>
+     <% @shortened_url.reverse_each do |row| %> 
+  <!--     <td><%= @shortened_url.index(row) +1 %></td> -->
+      <td><%= row.long_url %></td>
+      <td>	<a href="<%= row.short_url%>"><%= row.short_url %></a></td>
+      <td><%= row.click %></td>
+    </tr>
+     <% end %>
+  </table>
+
+   		<% if @error %>
+   			<p><%= @error %></p>
+   		<% end %>  
+
+</div>
