@@ -1,4 +1,4 @@
-class CreateUrls < ActiveRecord::Migration[4.2]
+class CreateUrls < ActiveRecord::Migration
 	def change
 		create_table :urls do |t|
 			t.string :long_url
