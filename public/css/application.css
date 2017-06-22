@@ -10,3 +10,7 @@ h2{
 
 .container{
   font-family: 'Crimson Text', serif;}
+
+input[type=submit] {
+  margin-top: 12px;
+}
