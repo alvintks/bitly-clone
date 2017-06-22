@@ -24,7 +24,7 @@
       <th>Clicks</th>
     </tr>
     <tr>
-     <% @shortened_url.reverse_each do |row| %> 
+     <% @shortened_url.limit(10).reverse_each do |row| %> 
   <!--     <td><%= @shortened_url.index(row) +1 %></td> -->
       <td><%= row.long_url %></td>
       <td>	<a href="<%= row.short_url%>"><%= row.short_url %></a></td>
