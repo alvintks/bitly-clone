@@ -32,7 +32,8 @@ post '/add_url' do
   if @url.save
     return @url.to_json
   else
-    return @url.errors.full_messages.join('. ')
+    status 404
+    return "Something went wrong."
   end
 end
 
